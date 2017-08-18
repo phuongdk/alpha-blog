@@ -1,0 +1,5 @@
+<h1>Showing the article</h1>
+<p>Title : <%= @article.title %></p>
+<p>Description : <%= @article.description %></p>
+<%= link_to 'Edit', edit_article_path(@article.id) %>
+<%= link_to 'Go back', root_path %>
