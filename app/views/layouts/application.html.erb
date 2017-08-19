@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Prototype Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= google_webfonts_init({
+    # popular fonts : 'Roboto', 'Roboto Condensed', 'Raleway', 'Playfair Display', 'Poppins', 'Arimo', 'Ubuntu', 'Montserrat', 'Oswald'
+    google: ['Ubuntu','Montserrat','Raleway']
+  }) %>
+
 </head>
 <body>
-<% flash.each { |name,msg| %>
-<ul>
-  <li><%= msg %></li>
-</ul>
-<% } %>
+  <div id="page">
+  <%= render 'layouts/navigationbar' %>
+  <%= render 'layouts/messages' %>
+<main class="main-content">
 <%= yield %>
-
+</main>
+ <%= render 'layouts/footer' %>
+</div>
 </body>
 </html>

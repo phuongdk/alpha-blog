@@ -1,0 +1,33 @@
+<header>
+<nav class="navbar navbar-default"
+<% if current_page?(:controller => 'articles', :action => 'home') %> style="background-color: rgba(0,0,0,0.4);" <% else %> style="background-color: rgba(0,0,0,1);"<% end %>>
+  <div class="col-md-3">
+    <div class="row">
+      <a class="navbar-brand" id="logo" href="<%= root_path %>">Prototype Blog</a>
+      </div>
+      </div>
+      <div class="col-md-6">
+      <div class="row">
+      <ul class="nav navbar-nav">
+        <li><a href="<%= articles_path %>">Articles <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Operation <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= new_article_path %>">New Article</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row"></div>
+      </div>
+</nav>
+</header>
