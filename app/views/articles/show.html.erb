@@ -1,5 +1,10 @@
-<h1>Showing the article</h1>
-<p>Title : <%= @article.title %></p>
-<p>Description : <%= @article.description %></p>
-<%= link_to 'Edit', edit_article_path(@article.id) %>
-<%= link_to 'Go back', root_path %>
+<div class="template-show-article">
+<div class="container">
+<h1 class="bottom-spacing">Article detail</h1>
+<div class="bottom-spacing"><span class="title">Title :</span> <%= @article.title %></div>
+<div class="bottom-spacing clearfix"><div class="description">Description :</div> <div class="text-description"><%= @article.description %></div></div>
+<%= link_to 'Edit',edit_article_path(@article.id),class:'btn btn-md btn-primary' %>
+<%= link_to 'Delete',article_path(@article.id),method: :delete,data: {confirm: "Are you sure?"},class:'btn btn-md btn-primary' %>
+<%= link_to 'Back to all articles',articles_path,class:'btn btn-md btn-primary' %>
+</div>
+</div>

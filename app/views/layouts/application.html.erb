@@ -15,7 +15,7 @@
   <div id="page">
   <%= render 'layouts/navigationbar' %>
   <%= render 'layouts/messages' %>
-<main class="main-content">
+<main class="main-content"<% if !current_page?(:controller => 'articles', :action => 'home') %>style="margin-bottom:30px";<% end %>>
 <%= yield %>
 </main>
  <%= render 'layouts/footer' %>
