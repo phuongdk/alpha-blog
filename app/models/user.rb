@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
      uniqueness: { case_sensitive: false },
      length: {minimum:5,maximum:50},
      format: { with:/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "Wrong email format" }
+     has_secure_password
 end    

@@ -1,0 +1,16 @@
+<div class="template-signup-page">
+<div class="container">
+<div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3">
+<% if @user.errors.any? %>
+<h2>The following errors occured:</h2>
+    <ul class="errors">
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>    
+<h1>Sign up for Prototype Blog</h1>
+<%= render 'form' %>
+</div>
+</div>
+</div>

@@ -1,0 +1,8 @@
+<div class="template-usershow-article">
+<div class="container">
+    <%= gravatar_for @user %>
+<h1 class="bottom-spacing">Welcome to <%= @user.username %>'s page</h1>
+<h2 class="bottom-spacing"><%= @user.username %>'s articles</h2>
+<%= render 'articles/article', obj: @user.articles %>
+</div>
+</div>

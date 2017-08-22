@@ -3,6 +3,11 @@
 <h1 class="bottom-spacing">Article detail</h1>
 <div class="bottom-spacing"><span class="title">Title :</span> <%= @article.title %></div>
 <div class="bottom-spacing clearfix"><div class="description">Description :</div> <div class="text-description"><%= @article.description %></div></div>
+<% if @article.user %>
+<div class="bottom-spacing"><span class="title">Created by :</span> <%= @article.user.username %></div>
+<div class="bottom-spacing"><span class="title">Published :</span> <%= time_ago_in_words(@article.user.created_at) %> ago</div>
+<div class="bottom-spacing"><span class="title">Updated :</span> <%= time_ago_in_words(@article.user.updated_at) %> ago</div>
+<% end %>
 <%= link_to 'Edit',edit_article_path(@article.id),class:'btn btn-md btn-primary' %>
 <%= link_to 'Delete',article_path(@article.id),method: :delete,data: {confirm: "Are you sure?"},class:'btn btn-md btn-primary' %>
 <%= link_to 'Back to all articles',articles_path,class:'btn btn-md btn-primary' %>

@@ -115,11 +115,46 @@ header {
     }
     }
 }
+/****TEMPLATE-SIGNUP-PAGE****/
+.template-signup-page {
+    h1 {padding:20px 0px;}
+}
+/****TEMPLATE-USERALL-PAGE****/
+.template-userall-article {
+    padding-top:30px;
+    min-height:300px;
+h1 {text-align:center;} 
+.user-listing {width:50%;margin:auto;}
+ul {
+    margin:0px auto 30px;
+    text-align:center;
+    line-height:35px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+ li {
+    list-style-type:none;
+    &:first-child {
+    margin-bottom:20px;    
+    }
+ }   
+}
+}
+/****TEMPLATE-USERSHOW-PAGE****/
+.template-usershow-article {
+    padding-top:30px;
+    min-height:300px;
+    h1 {text-align:center;}
+    .avatar-image {
+        display:block;
+        margin:auto;
+    }
+}
 /****TEMPLATE-ALL-ARTICLE****/
 .template-all-article {
     table td {line-height: 25px !important;}
 }
-/****TEMPLATE SHOW****/
+/****TEMPLATE ARTICLE SHOW****/
 .template-show-article {
     min-height:300px;
     .title,.description {

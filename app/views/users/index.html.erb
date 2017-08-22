@@ -1,0 +1,14 @@
+<div class="template-userall-article">
+<div class="container">
+    <h1 class="bottom-spacing">All prototype bloggers</h1>
+    <div class="user-listing">
+    <% @user.each do |user| %>
+    <ul>
+    <li><%= link_to gravatar_for(user), user_path(user.id) %></li>
+    <li>Username : <%= link_to user.username, user_path(user.id) %></li>
+    <li>Article(s) write : <%= pluralize(user.articles.count,"article") %></li>
+    </ul>
+    <% end %>
+    </div>
+</div>    
+</div>
