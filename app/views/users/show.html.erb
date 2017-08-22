@@ -3,6 +3,10 @@
     <%= gravatar_for @user %>
 <h1 class="bottom-spacing">Welcome to <%= @user.username %>'s page</h1>
 <h2 class="bottom-spacing"><%= @user.username %>'s articles</h2>
+<% if @user.articles.present? %>
 <%= render 'articles/article', obj: @user.articles %>
+<% else %>
+<p>You haven't created your article yet.<a href="<%= new_article_path %>"> Click here</a> to create your article</p>  
+<% end %>
 </div>
 </div>

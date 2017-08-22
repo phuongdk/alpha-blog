@@ -3,9 +3,6 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page],per_page: 4)
    end
    
-   def login
-   end
-    
    def signup
     @user = User.new
    end    

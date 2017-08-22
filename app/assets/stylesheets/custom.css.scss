@@ -45,6 +45,14 @@ header {
 }
 }   
 }
+&.logged_in {
+    > li > a {
+     &:hover, &:focus {
+        color: #ffffff;
+        background-color: transparent;
+    }   
+    }
+}
 }
 }
 #logo {
@@ -118,6 +126,11 @@ header {
 /****TEMPLATE-SIGNUP-PAGE****/
 .template-signup-page {
     h1 {padding:20px 0px;}
+}
+/****TEMPLATE-LOGIN-PAGE****/
+.template-login-page {
+    padding-top:30px;
+    min-height:300px;
 }
 /****TEMPLATE-USERALL-PAGE****/
 .template-userall-article {
