@@ -10,3 +10,74 @@
    </div>
  </div>    
 </div>
+</div>
+
+<style>
+ .info-wrap {
+  position: fixed;
+    bottom: 40px;
+    right: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    text-align: center;
+ }
+ .info-wrap a  {
+   color: #000000; 
+ }
+ .info-wrap:hover {
+  background: #000000;
+ }
+ .info-wrap:hover a{
+  color:#ffffff;
+ }
+ .info-wrap .info-account {
+  position:absolute;
+  top: -220px;
+  right:0px;
+  min-width:250px;
+  height:auto;
+  border: 1px solid black;
+  background: white;
+  border-radius:5px;
+  line-height:normal;
+  opacity:0;
+  visibility:hidden;
+ }
+ .info-wrap .info-account .content{
+  padding:10px;
+  text-align:left;
+ }
+ .info-wrap:hover .info-account {
+  visibility:visible;
+  opacity:1;
+ }
+ .info-wrap .info-account h2 {
+  text-transform:uppercase;
+  margin:0px;
+  padding:10px 0px;
+  background:#000000;
+  font-size:20px;
+  color:#ffffff;
+ }
+ .info-wrap .info-account .title {
+  color:red;
+ }
+</style>
+<div class="info-wrap">
+<a href="javascript:void(0)"><i class="fa fa-info"></i></a>
+<div class="info-account">
+ <h2>Account info</h2>
+ <div class="content">
+  <p class="title"><strong>- User account example</strong></p>
+  <p style="text-indent:15px">  Email : user1@example.com</p>
+  <p style="text-indent:15px">  Password : 123456</p>
+  <p class="title"><strong>- Admin account example</strong></p>
+  <p style="text-indent:15px">  ID : admin</p>
+  <p style="text-indent:15px">  Password : admin</p>
+  </div>
+  </div>
+</div>
