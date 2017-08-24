@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit,:update,:show,:destroy]
-    
+    before_action :require_user, except: [:home,:index,:show]
+    before_action :require_same_user, only: [:edit,:update,:destroy]
     def home
     end 
     
@@ -53,5 +54,13 @@ class ArticlesController < ApplicationController
     
     def article_params
      params.require(:article).permit(:title,:description)
-    end        
+    end    
+    
+    def require_same_user
+     if current_user != @article.user
+     flash[:danger] = "404 Page is not found"
+     redirect_to user_path(current_user.id) 
+     end  
+    end  
+    
 end    

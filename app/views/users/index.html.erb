@@ -10,6 +10,7 @@
     <li><%= link_to gravatar_for(user), user_path(user.id) %></li>
     <li>Username : <%= link_to user.username, user_path(user.id) %></li>
     <li>Article(s) write : <%= pluralize(user.articles.count,"article") %></li>
+    <%= link_to 'Delete user',user_path(user.id),method: :delete,data: {confirm: "Are you sure?"},class:'btn btn-md btn-danger' %>
     </ul>
     <% end %>
     <div align="center">
