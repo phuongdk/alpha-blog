@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    before_action :set_user, only: [:edit,:update,:show,:destroy]
-   before_action :require_user, except: [:index,:signup]
+   before_action :require_user, except: [:index,:signup,:create]
    before_action :require_same_user, only: [:edit,:update,:destroy]
    def index
     @users = User.paginate(page: params[:page],per_page: 4)
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
      if @user.save
         flash[:success] = "User was successfully created"
-        redirect_to articles_path
+        redirect_to signup_path
      else
         render 'signup'
      end
