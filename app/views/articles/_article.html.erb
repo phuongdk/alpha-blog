@@ -5,7 +5,9 @@
         <th style="width:50%">Description</th>
         <th style="width:25%">Action</th>
     </tr>
+    <% if (obj) %>
     <% obj.each do |article| %>
+    <tr>
         <td>
             Title : <%= link_to article.title,article_path(article.id) %><br/>
             Created by : <a href="<%= user_path(article.user.id) %>"><span style="color:#337ab7"><%= article.user.username %></span></a><br/>
@@ -23,6 +25,9 @@
         <% end %>
         </td>
     </tr>
+    <% end %>
+    <% else %>
+    <tr><td colspan="3" align="center">There is no articles</td></tr>    
     <% end %>
 </table>
 </div>
