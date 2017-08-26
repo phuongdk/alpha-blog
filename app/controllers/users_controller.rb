@@ -2,6 +2,7 @@ class UsersController < ApplicationController
    before_action :set_user, only: [:edit,:update,:show,:destroy]
    before_action :require_user, except: [:index,:signup,:create]
    before_action :require_same_user, only: [:edit,:update,:destroy]
+   before_action :require_admin, only: [:index]
    def index
     @users = User.paginate(page: params[:page],per_page: 4)
    end
@@ -60,10 +61,17 @@ class UsersController < ApplicationController
    end   
    
    def require_same_user
-     if current_user != @user
+     if current_user != @user and !current_user.admin?
      flash[:danger] = "Page is not found"
      redirect_to user_path(current_user.id) 
      end  
-   end  
+   end
+   
+   def require_admin
+    if logged_in? and !current_user.admin?
+    flash[:danger] = "Page is not found"
+    redirect_to root_path
+    end 
+   end 
    
 end
